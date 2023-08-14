@@ -2725,6 +2725,9 @@ textarea {
 }
 
 .you-get-form-registration-form-body-wrap img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
 }

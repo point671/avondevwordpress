@@ -395,7 +395,7 @@ wp_reset_postdata(); // сброс
                 <h3 class="body-form-registration__title title-company-advantage-body">
                     Анкета для регистрации в компании AVON
                 </h3>
-
+                <?php echo do_shortcode('[contact-form-7 id="73ff41e" title="Анкета для регистрации"]'); ?>
                 <form class="body-form-registration__form form-registration-form-body">
                     <div class="form-registration-form-body__wrap wrap-body-form-registration-form">
                         <div class="wrap-body-form-registration-form__item">
@@ -797,6 +797,35 @@ wp_reset_postdata(); // сброс
                 <h3 class="body-questions-any-have__title title-company-advantage-body">Остались вопросы?</h3>
                 <div class="body-questions-any-have__spollers spollers-have-any-questions-body">
                     <div data-spollers class="spollers">
+
+                        <?php
+// параметры по умолчанию
+$my_posts = get_posts( array(
+    'numberposts' => -1,
+    'orderby'     => 'date',
+    'category_name'    => 'spollers',
+    'order'       => 'ACS',
+    'post_type'   => 'post',
+    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+) );
+
+global $post;
+
+foreach( $my_posts as $post ){
+    setup_postdata( $post );
+    ?>
+                        <div class="spollers__item">
+                            <button type="button" data-spoller
+                                class="spollers__title"><?php the_field("have-any-questions-title"); ?></button>
+                            <div class="spollers__body"><?php the_field("have-any-questions-text"); ?></div>
+                        </div>
+                        <?php 
+        // формат вывода the_title() ...
+}
+
+wp_reset_postdata(); // сброс
+?>
+
                         <div class="spollers__item">
                             <button type="button" data-spoller class="spollers__title">Заголовок
                                 спойлера</button>
