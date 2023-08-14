@@ -306,32 +306,33 @@ get_header();
                     <div class="steps">
 
                         <?php
-                                    // параметры по умолчанию
-                                    $my_posts = get_posts( array(
-                                        'numberposts' => -1,
-                                        'category'    => 0,
-                                        'orderby'     => 'date',
-                                        'category_name'    => 'steps',
-                                        'order'       => 'asc',
-                                        'post_type'   => 'post',
-                                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-                                    ) );
+// параметры по умолчанию
+$my_posts = get_posts( array(
+    'numberposts' => -1,
+    'category'    => 0,
+    'orderby'     => 'date',
+    'category_name'    => 'steps',
+    'order'       => 'asc',
+    'post_type'   => 'post',
+    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+) );
 
-                                    global $post;
+global $post;
 
-                                    foreach( $my_posts as $post ){
-                                        setup_postdata( $post );
-                                        ?>
+foreach( $my_posts as $post ){
+    setup_postdata( $post );
+    ?>
                         <div class="steps__wrap">
-                            <div class="step">
+                            <div class="step <?php if($post->ID == $my_posts[0]->ID) echo "step_one"; ?>">
                                 <div class="step__number"><?php the_field("steps-box-number"); ?></div>
                             </div>
                             <div class="step-text"><?php the_field("steps-box-text"); ?></div>
                         </div>
                         <?php 
-                                        // формат вывода the_title() ...
-                                    }
-                                    wp_reset_postdata(); // сброс
+        // формат вывода the_title() ...
+}
+
+wp_reset_postdata(); // сброс
 ?>
 
                         <!-- <div class="steps__wrap">
