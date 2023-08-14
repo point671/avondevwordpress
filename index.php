@@ -102,8 +102,6 @@ get_header();
             <div class="register-card__body body-card-register">
                 <h2 class="body-card-register__title">Регистрация даёт возможность:</h2>
                 <div class="body-card-register__card-section card-section-register-card-body">
-
-
                     <div class="card-section-register-card-body__item item-body-card-register-section-card">
                         <div class="item-body-card-register-section-card__img-wrap">
                             <img src="<?php the_field("register-card-img_1"); ?>" alt="">
@@ -141,30 +139,26 @@ get_header();
                         <div
                             class="item-body-card-register-section-card__become become-card-section-register-card-body-item">
                             <div class="become-card-section-register-card-body-item__wrap">
-                                <h3 class="become-card-section-register-card-body-item__title">Стать покупателем
+                                <h3 class="become-card-section-register-card-body-item__title">
+                                    <?php the_field("register-card-card-title_2"); ?>
                                 </h3>
-                                <div class="become-card-section-register-card-body-item__text">Заказывай для
-                                    себя со
-                                    скидкой и подарками</div>
+                                <div class="become-card-section-register-card-body-item__text">
+                                    <?php the_field("register-card-signature_2"); ?></div>
                             </div>
                         </div>
                         <div
                             class="item-body-card-register-section-card__list list-card-section-register-card-body-item">
                             <ul
                                 class="list-card-section-register-card-body-item__ul ul-item-body-card-register-section-card-list">
-                                <li class="ul-item-body-card-register-section-card-list__li">Экономия до 30% на
-                                    каждый заказ</li>
                                 <li class="ul-item-body-card-register-section-card-list__li">
-                                    Доставка напрямую со склада AVON.
+                                    <?php the_field("register-card-text_2"); ?>
                                 </li>
-                                <li class="ul-item-body-card-register-section-card-list__li">Участие в закрытых
-                                    распродажах</li>
                             </ul>
                         </div>
                         <div
                             class="item-body-card-register-section-card__button-wrap button-wrap-card-section-register-card-body-item">
                             <div class="button-wrap-card-section-register-card-body-item__button">
-                                Подробнее
+                                <?php the_field("register-card-button_1"); ?>
                             </div>
                         </div>
                     </div>
@@ -175,34 +169,27 @@ get_header();
                         <div
                             class="item-body-card-register-section-card__become become-card-section-register-card-body-item">
                             <div class="become-card-section-register-card-body-item__wrap">
-                                <h3 class="become-card-section-register-card-body-item__title">Стать покупателем
+                                <h3 class="become-card-section-register-card-body-item__title">
+                                    <?php the_field("register-card-card-title_3"); ?>
                                 </h3>
-                                <div class="become-card-section-register-card-body-item__text">Заказывай для
-                                    себя со
-                                    скидкой и подарками</div>
+                                <div class="become-card-section-register-card-body-item__text">
+                                    <?php the_field("register-card-signature_3"); ?></div>
                             </div>
                         </div>
                         <div
                             class="item-body-card-register-section-card__list list-card-section-register-card-body-item">
                             <ul
                                 class="list-card-section-register-card-body-item__ul ul-item-body-card-register-section-card-list">
-                                <li class="ul-item-body-card-register-section-card-list__li">Экономия до 30% на
-                                    каждый заказ</li>
                                 <li class="ul-item-body-card-register-section-card-list__li">
-                                    Доставка напрямую со склада AVON.
+                                    <?php the_field("register-card-text_3"); ?>
                                 </li>
-                                <li class="ul-item-body-card-register-section-card-list__li">Участие в закрытых
-                                    распродажах</li>
                             </ul>
-
                         </div>
                         <div
                             class="item-body-card-register-section-card__button-wrap button-wrap-card-section-register-card-body-item">
                             <div class="button-wrap-card-section-register-card-body-item__button">
-                                Подробнее
+                                <?php the_field("register-card-button_1"); ?>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -213,46 +200,67 @@ get_header();
     <section class="company-advantage">
         <div class="company-advantage__container">
             <div class="company-advantage__body body-advantage-company">
-                <h2 class="body-advantage-company__title title-company-advantage-body">Преимущества компании
-                    AVON</h2>
+                <h2 class="body-advantage-company__title title-company-advantage-body">
+                    <?php the_field("company-advantage_title"); ?></h2>
                 <div class="body-advantage-company__items items-company-advantage-body">
                     <div class="items-company-advantage-body__items items-body-advantage-company-item">
-                        <div class="items-body-advantage-company-item__number">12</div>
-                        <div class="items-body-advantage-company-item__number-txt">зарплат в год</div>
-                        <div class="items-body-advantage-company-item__text">Выплаты за продажи по каждому
-                            каталогу + бонусы</div>
+                        <div class="items-body-advantage-company-item__number">
+                            <?php the_field("company-advantage-title_1"); ?></div>
+                        <div class="items-body-advantage-company-item__number-txt">
+                            <?php the_field("company-advantage-signature_1"); ?></div>
+                        <div class="items-body-advantage-company-item__text">
+                            <?php the_field("company-advantage-text_1"); ?></div>
                     </div>
                     <div class="items-company-advantage-body__items items-body-advantage-company-item">
-                        <div class="items-body-advantage-company-item__number">12</div>
-                        <div class="items-body-advantage-company-item__number-txt">зарплат в год</div>
-                        <div class="items-body-advantage-company-item__text">Выплаты за продажи по каждому
-                            каталогу + бонусы</div>
+                        <div class="items-body-advantage-company-item__number">
+                            <?php the_field("company-advantage-title_2"); ?></div>
+                        <div class="items-body-advantage-company-item__number-txt">
+                            <?php the_field("company-advantage-signature_2"); ?></div>
+                        <div class="items-body-advantage-company-item__text">
+                            <?php the_field("company-advantage-text_2"); ?></div>
                     </div>
                     <div class="items-company-advantage-body__items items-body-advantage-company-item">
-                        <div class="items-body-advantage-company-item__number">12</div>
-                        <div class="items-body-advantage-company-item__number-txt">зарплат в год</div>
-                        <div class="items-body-advantage-company-item__text">Выплаты за продажи по каждому
-                            каталогу + бонусы</div>
+                        <div class="items-body-advantage-company-item__number">
+                            <?php the_field("company-advantage-title_3"); ?></div>
+                        <div class="items-body-advantage-company-item__number-txt">
+                            <?php the_field("company-advantage-signature_3"); ?></div>
+                        <div class="items-body-advantage-company-item__text">
+                            <?php the_field("company-advantage-text_3"); ?></div>
                     </div>
                     <div class="items-company-advantage-body__items items-body-advantage-company-item">
-                        <div class="items-body-advantage-company-item__number">12</div>
-                        <div class="items-body-advantage-company-item__number-txt">зарплат в год</div>
-                        <div class="items-body-advantage-company-item__text">Выплаты за продажи по каждому
-                            каталогу + бонусы</div>
+                        <div class="items-body-advantage-company-item__number">
+                            <span class="items-body-advantage-company-item__ot">
+                                <?php the_field("company-advantage-ot_4"); ?>
+                            </span>
+                            <?php the_field("company-advantage-title_4"); ?>
+                            <span class="items-body-advantage-company-item__rub">
+                                <?php the_field("company-advantage-rub_4"); ?>
+                            </span>
+                        </div>
+
+                        <div class="items-body-advantage-company-item__number-txt">
+                            <?php the_field("company-advantage-signature_4"); ?></div>
+                        <div class="items-body-advantage-company-item__text">
+                            <?php the_field("company-advantage-text_4"); ?>
+                        </div>
                     </div>
                     <div class="items-company-advantage-body__items items-body-advantage-company-item">
-                        <div class="items-body-advantage-company-item__number">12</div>
-                        <div class="items-body-advantage-company-item__number-txt">зарплат в год</div>
-                        <div class="items-body-advantage-company-item__text">Выплаты за продажи по каждому
-                            каталогу + бонусы</div>
+                        <div class="items-body-advantage-company-item__number">
+                            <?php the_field("company-advantage-title_5"); ?></div>
+                        <div class="items-body-advantage-company-item__number-txt">
+                            <?php the_field("company-advantage-signature_5"); ?></div>
+                        <div class="items-body-advantage-company-item__text">
+                            <?php the_field("company-advantage-text_5"); ?></div>
                     </div>
-                </div>
-                <div class="items-body-advantage-company-item__button button-item-company-advantage-body-items">
-                    <div class="button-item-company-advantage-body-items__real-button" data-goto=".registration-form">
-                        ЗАПОЛНИТЬ АНКЕТУ</div>
                 </div>
 
             </div>
+            <div class="items-body-advantage-company-item__button button-item-company-advantage-body-items">
+                <div class="button-item-company-advantage-body-items__real-button" data-goto=".registration-form">
+                    <?php the_field("company-advantage-button"); ?></div>
+            </div>
+
+        </div>
         </div>
 
     </section>
@@ -260,8 +268,7 @@ get_header();
     <section class="steps-box">
         <div class="steps-box__container">
             <div class="steps-box__body body-steps-box">
-                <h3 class="body-steps-box__title title-box-steps-body">Заманчиво! А подробности?<br>
-                    <span class="title-box-steps-body__span">5 шагов до лидера</span> со стабильным доходом
+                <h3 class="body-steps-box__title title-box-steps-body"> <?php the_field("steps-box-title"); ?>
                 </h3>
                 <div class="body-steps-box__wrap-content wrap-content-box-steps-body">
                     <!-- 
@@ -576,34 +583,22 @@ get_header();
     <section class="join-the-team">
         <div class="join-the-team__container">
             <div class="join-the-team__body body-team-the-join">
-                <h3 class="body-team-the-join__title title-box-steps-body">Заманчиво! А подробности?<br>
-                    <span class="title-box-steps-body__span">5 шагов до лидера</span> со стабильным доходом
+                <h3 class="body-team-the-join__title title-box-steps-body"><?php the_field("join-the-team-title"); ?>
                 </h3>
                 <div class="body-team-the-join__content content-join-the-team-body">
                     <div class="content-join-the-team-body__welcome">
-                        Давай знакомиться!
-                        Меня зовут Ирина Ликаркина.
-                        Я – лидер компании AVON.
+                        <?php the_field("join-the-team-signature"); ?>
                     </div>
 
                     <div class="content-join-the-team-body__wrap-text-image wrap-text-image-body-team-the-join-content">
                         <p class="wrap-text-image-body-team-the-join-content__text">
-                            Я сотрудничаю с Avon уже 15 лет и являюсь ведущим менеджером компании.
-                            Сайт AVONCOS специально создан для моих покупателей и команды представителей. Здесь
-                            вы найдете информацию о последних новостях и событиях в международной компании,
-                            полезные советы для карьеры и бизнеса, описание новинок и хитов продукции,
-                            рекомендации по уходу за собой и разнообразные обучающие материалы.
-                            На моем сайте для представителей можно зарегистрироваться в Avon, полистать
-                            каталоги, заказать продукцию со скидками, пройти обучение или задать любой вопрос.
-                            Регистрируйтесь, подписывайтесь на рассылку и добавляйте сайт в закладки браузера.
-                            Вместе мы добьемся успеха!
+                            <?php the_field("join-the-team-content"); ?>
                         </p>
                         <div
                             class="wrap-text-image-body-team-the-join-content__img-box img-box-content-join-the-team-body-image-text-wrap">
                             <div class="img-box-content-join-the-team-body-image-text-wrap__img">
                                 <img class="img-wrap-text-image-body-team-the-join-content-box-img"
-                                    src="<?php echo bloginfo('template_url'); ?>/assets/img/join-the-team/image.png"
-                                    alt="">
+                                    src=" <?php the_field("join-the-team-img"); ?>" alt="">
                             </div>
 
 

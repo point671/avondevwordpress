@@ -1406,6 +1406,12 @@ h6 {
   list-style: disc;
 }
 
+.ul-item-body-card-register-section-card-list__li ul li{
+  list-style: disc;
+}
+
+
+
 @supports (font-size: clamp( 0.9375rem , 0.6668233083rem  +  0.5639097744vw , 1.125rem )) {
   .ul-item-body-card-register-section-card-list__li {
     font-size: clamp( 0.9375rem , 0.6668233083rem  +  0.5639097744vw , 1.125rem );
@@ -1504,6 +1510,7 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 50px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
@@ -1519,6 +1526,13 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 350px;
+}
+
+.items-body-advantage-company-item__ot{
+  font-size: 15px;
+}
+.items-body-advantage-company-item__rub{
+  font-size: 15px;
 }
 
 .items-body-advantage-company-item__number {
@@ -3930,6 +3944,11 @@ button.swiper-pagination-bullet {
     height: 1.125rem;
     cursor: pointer;
     z-index: 55;
+  }
+
+
+  .items-company-advantage-body{
+    gap: 10px;
   }
 
   .icon-menu span,
