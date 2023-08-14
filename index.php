@@ -106,8 +106,37 @@ get_header();
 
                     <div class="card-section-register-card-body__item item-body-card-register-section-card">
                         <div class="item-body-card-register-section-card__img-wrap">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/register-card/free-icon-businesswoman.png"
-                                alt="">
+                            <img src="<?php the_field("register-card-img_1"); ?>" alt="">
+                        </div>
+                        <div
+                            class="item-body-card-register-section-card__become become-card-section-register-card-body-item">
+                            <div class="become-card-section-register-card-body-item__wrap">
+                                <h3 class="become-card-section-register-card-body-item__title">
+                                    <?php the_field("register-card-card-title_1"); ?>
+                                </h3>
+                                <div class="become-card-section-register-card-body-item__text">
+                                    <?php the_field("register-card-signature_1"); ?></div>
+                            </div>
+                        </div>
+                        <div
+                            class="item-body-card-register-section-card__list list-card-section-register-card-body-item">
+                            <ul
+                                class="list-card-section-register-card-body-item__ul ul-item-body-card-register-section-card-list">
+                                <li class="ul-item-body-card-register-section-card-list__li">
+                                    <?php the_field("register-card-text_1"); ?>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="item-body-card-register-section-card__button-wrap button-wrap-card-section-register-card-body-item">
+                            <div class="button-wrap-card-section-register-card-body-item__button">
+                                <?php the_field("register-card-button_1"); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-register-card-body__item item-body-card-register-section-card">
+                        <div class="item-body-card-register-section-card__img-wrap">
+                            <img src="<?php the_field("register-card-img_2"); ?>" alt="">
                         </div>
                         <div
                             class="item-body-card-register-section-card__become become-card-section-register-card-body-item">
@@ -141,43 +170,7 @@ get_header();
                     </div>
                     <div class="card-section-register-card-body__item item-body-card-register-section-card">
                         <div class="item-body-card-register-section-card__img-wrap">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/register-card/free-icon-businesswoman.png"
-                                alt="">
-                        </div>
-                        <div
-                            class="item-body-card-register-section-card__become become-card-section-register-card-body-item">
-                            <div class="become-card-section-register-card-body-item__wrap">
-                                <h3 class="become-card-section-register-card-body-item__title">Стать покупателем
-                                </h3>
-                                <div class="become-card-section-register-card-body-item__text">Заказывай для
-                                    себя со
-                                    скидкой и подарками</div>
-                            </div>
-                        </div>
-                        <div
-                            class="item-body-card-register-section-card__list list-card-section-register-card-body-item">
-                            <ul
-                                class="list-card-section-register-card-body-item__ul ul-item-body-card-register-section-card-list">
-                                <li class="ul-item-body-card-register-section-card-list__li">Экономия до 30% на
-                                    каждый заказ</li>
-                                <li class="ul-item-body-card-register-section-card-list__li">
-                                    Доставка напрямую со склада AVON.
-                                </li>
-                                <li class="ul-item-body-card-register-section-card-list__li">Участие в закрытых
-                                    распродажах</li>
-                            </ul>
-                        </div>
-                        <div
-                            class="item-body-card-register-section-card__button-wrap button-wrap-card-section-register-card-body-item">
-                            <div class="button-wrap-card-section-register-card-body-item__button">
-                                Подробнее
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-section-register-card-body__item item-body-card-register-section-card">
-                        <div class="item-body-card-register-section-card__img-wrap">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/register-card/free-icon-businesswoman.png"
-                                alt="">
+                            <img src="<?php the_field("register-card-img_3"); ?>" alt="">
                         </div>
                         <div
                             class="item-body-card-register-section-card__become become-card-section-register-card-body-item">
