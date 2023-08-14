@@ -828,6 +828,13 @@ h6 {
   /* 24px */
 }
 
+
+.item-body-footer-content__link:hover{
+  color: red;
+  transition: 0.2s;
+
+}
+
 @supports (font-size: clamp( 0.875rem , 0.6945488722rem  +  0.3759398496vw , 1rem )) {
   .item-body-footer-content {
     font-size: clamp( 0.875rem , 0.6945488722rem  +  0.3759398496vw , 1rem );

@@ -480,9 +480,9 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <div class="form-registration-form-body__button-wrap button-wrap-body-form-registration-form">
+                    <button class="form-registration-form-body__button-wrap button-wrap-body-form-registration-form">
                         ЗАПОЛНИТЬ АНКЕТУ
-                    </div>
+                    </button>
                 </form>
             </div>
         </div>
@@ -600,14 +600,8 @@ get_header();
                                 <img class="img-wrap-text-image-body-team-the-join-content-box-img"
                                     src=" <?php the_field("join-the-team-img"); ?>" alt="">
                             </div>
-
-
                         </div>
-
-
                     </div>
-
-
                     <div class="menu-block__bg fill-form__bg">
                         <img src="<?php echo bloginfo('template_url'); ?>/assets/img/join-the-team/Background.png"
                             alt="">
