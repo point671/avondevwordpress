@@ -658,54 +658,42 @@ wp_reset_postdata(); // сброс
                 <h3 class="body-achievements-my__title title-company-advantage-body">Отзывы
                     представителей</h3>
                 <div class="body-achievements-my__content content-my-achievements-body">
+
+
+                    <?php
+// параметры по умолчанию
+$my_posts = get_posts( array(
+    'numberposts' => -1,
+    'orderby'     => 'date',
+    'category_name'    => 'my-achievements',
+    'order'       => 'ACS',
+    'post_type'   => 'post',
+    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+) );
+
+global $post;
+
+foreach( $my_posts as $post ){
+    setup_postdata( $post );
+    ?>
                     <div class="content-my-achievements-body__item item-body-achievements-my-content">
                         <div class="item-body-achievements-my-content__icon">
                             <img src="<?php echo bloginfo('template_url'); ?>/assets/img/my-achievements/sparkle.svg"
                                 alt="">
                         </div>
-                        <div class="item-body-achievements-my-content__text">AVON – мой единственный источник
-                            дохода. Я полностью обеспечиваю свою семью. </div>
+                        <div class="item-body-achievements-my-content__text">
+                            <?php the_field("my-achievements"); ?> </div>
                     </div>
-                    <div class="content-my-achievements-body__item item-body-achievements-my-content">
-                        <div class="item-body-achievements-my-content__icon">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/my-achievements/sparkle.svg"
-                                alt="">
-                        </div>
-                        <div class="item-body-achievements-my-content__text">AVON – мой единственный источник
-                            дохода. Я полностью обеспечиваю свою семью. </div>
-                    </div>
-                    <div class="content-my-achievements-body__item item-body-achievements-my-content">
-                        <div class="item-body-achievements-my-content__icon">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/my-achievements/sparkle.svg"
-                                alt="">
-                        </div>
-                        <div class="item-body-achievements-my-content__text">AVON – мой единственный источник
-                            дохода. Я полностью обеспечиваю свою семью. </div>
-                    </div>
-                    <div class="content-my-achievements-body__item item-body-achievements-my-content">
-                        <div class="item-body-achievements-my-content__icon">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/my-achievements/sparkle.svg"
-                                alt="">
-                        </div>
-                        <div class="item-body-achievements-my-content__text">AVON – мой единственный источник
-                            дохода. Я полностью обеспечиваю свою семью. </div>
-                    </div>
-                    <div class="content-my-achievements-body__item item-body-achievements-my-content">
-                        <div class="item-body-achievements-my-content__icon">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/my-achievements/sparkle.svg"
-                                alt="">
-                        </div>
-                        <div class="item-body-achievements-my-content__text">AVON – мой единственный источник
-                            дохода. Я полностью обеспечиваю свою семью. </div>
-                    </div>
-                    <div class="content-my-achievements-body__item item-body-achievements-my-content">
-                        <div class="item-body-achievements-my-content__icon">
-                            <img src="<?php echo bloginfo('template_url'); ?>/assets/img/my-achievements/sparkle.svg"
-                                alt="">
-                        </div>
-                        <div class="item-body-achievements-my-content__text">AVON – мой единственный источник
-                            дохода. Я полностью обеспечиваю свою семью. </div>
-                    </div>
+                    <?php 
+        // формат вывода the_title() ...
+}
+
+wp_reset_postdata(); // сброс
+?>
+
+
+
+
                 </div>
             </div>
         </div>
