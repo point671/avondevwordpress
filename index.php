@@ -304,15 +304,37 @@ get_header();
 
 							</div> -->
                     <div class="steps">
-                        <div class="steps__wrap">
-                            <div class="step step_one">
-                                <div class="step__number">1</div>
-                            </div>
-                            <div class="step-text">Зарегистрироваться прямым покупателем или представителем —
-                                заполнить анкету и получить доступ в личный кабинет</div>
 
-                        </div>
+                        <?php
+                                    // параметры по умолчанию
+                                    $my_posts = get_posts( array(
+                                        'numberposts' => -1,
+                                        'category'    => 0,
+                                        'orderby'     => 'date',
+                                        'category_name'    => 'steps',
+                                        'order'       => 'asc',
+                                        'post_type'   => 'post',
+                                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                                    ) );
+
+                                    global $post;
+
+                                    foreach( $my_posts as $post ){
+                                        setup_postdata( $post );
+                                        ?>
                         <div class="steps__wrap">
+                            <div class="step">
+                                <div class="step__number"><?php the_field("steps-box-number"); ?></div>
+                            </div>
+                            <div class="step-text"><?php the_field("steps-box-text"); ?></div>
+                        </div>
+                        <?php 
+                                        // формат вывода the_title() ...
+                                    }
+                                    wp_reset_postdata(); // сброс
+?>
+
+                        <!-- <div class="steps__wrap">
                             <div class="step">
                                 <div class="step__number">2</div>
                             </div>
@@ -359,7 +381,7 @@ get_header();
                             <div class="step-text">Зарегистрироваться прямым покупателем или представителем —
                                 заполнить анкету и получить доступ в личный кабинет</div>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -372,6 +394,7 @@ get_header();
                 <h3 class="body-form-registration__title title-company-advantage-body">
                     Анкета для регистрации в компании AVON
                 </h3>
+
                 <form class="body-form-registration__form form-registration-form-body">
                     <div class="form-registration-form-body__wrap wrap-body-form-registration-form">
                         <div class="wrap-body-form-registration-form__item">
@@ -498,8 +521,46 @@ get_header();
                 <div class="title-company-advantage-body__slider swiper">
                     <!-- Двигающееся часть слайдера -->
                     <div class="title-company-advantage-body__wrapper swiper-wrapper">
+
+                        <?php
+                             // параметры по умолчанию
+                            $my_posts = get_posts( array(
+                                'numberposts' => -1,
+                                'category_name'    => 'slider',
+                                'orderby'     => 'date',
+                                'order'       => 'DESC',
+                                'post_type'   => 'post',
+                                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+
+                            global $post;
+
+                            foreach( $my_posts as $post ){
+                                setup_postdata( $post );
+                                    ?>
+                        <div class="title-company-advantage-body__slide swiper-slide">
+                            <div class="swiper-slide__wrap-content wrap-content-slide-swiper">
+                                <div class="wrap-content-slide-swiper__avatar avatar-swiper-slide-content-wrap">
+                                    <img class="avatar-swiper-slide-content-wrap__img"
+                                        src="<?php the_field("representative-reviews-img"); ?>" alt="">
+                                </div>
+                                <p class="wrap-content-slide-swiper__text">
+                                    <?php the_field("representative-reviews-text"); ?></p>
+                            </div>
+                            <div class="wrap-content-slide-swiper__signature">
+                                <?php the_field("representative-reviews-signature"); ?></div>
+                        </div>
+                        <?php
+                                // формат вывода the_title() ...
+                            }
+
+                            wp_reset_postdata(); // сброс
+                    
+                    ?>
                         <!-- Слайд -->
-                        <div class="title-company-advantage-body__slide swiper-slide">
+
+
+                        <!-- <div class="title-company-advantage-body__slide swiper-slide">
                             <div class="swiper-slide__wrap-content wrap-content-slide-swiper">
                                 <div class="wrap-content-slide-swiper__avatar avatar-swiper-slide-content-wrap">
                                     <img class="avatar-swiper-slide-content-wrap__img"
@@ -540,28 +601,7 @@ get_header();
                                     отличное.</p>
                             </div>
                             <div class="wrap-content-slide-swiper__signature">Лариса, г. Росляково</div>
-                        </div>
-                        <div class="title-company-advantage-body__slide swiper-slide">
-                            <div class="swiper-slide__wrap-content wrap-content-slide-swiper">
-                                <div class="wrap-content-slide-swiper__avatar avatar-swiper-slide-content-wrap">
-                                    <img class="avatar-swiper-slide-content-wrap__img"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/representative-reviews/image.png"
-                                        alt="">
-                                </div>
-                                <p class="wrap-content-slide-swiper__text">Я уже в возрасте и всегда
-                                    беспокоилась, как и на что буду жить дальше. В AVON меня привлекли
-                                    бесплатная регистрация, гибкий график работы и официальное трудоустройство.
-                                    Теперь не о чем и переживать. Работаю как координатором, так и себе
-                                    заказываю продукцию со скидками. Доход стабильный и денег вполне хватает.
-                                    Есть постоянные клиенты, которые со временем стали подругами. Сотрудничая с
-                                    Эйвон,
-                                    я научилась разбираться в парфюмерии и косметике, ухаживать за собой и
-                                    зарабатывать деньги.
-                                    Выгляжу молодо и стильно, занимаюсь интересным делом и настроение всегда
-                                    отличное.</p>
-                            </div>
-                            <div class="wrap-content-slide-swiper__signature">Лариса, г. Росляково</div>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- Если нужна навигация (влево/вправо) -->
 
