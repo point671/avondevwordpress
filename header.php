@@ -35,27 +35,15 @@
                                 <div class="logo-menu__name"><?php the_field("logo"); ?></div>
                             </div>
 
-                            <?php
-                                wp_nav_menu( [
-                                    'menu'            => 'Main',
-                                    'container'       => false,
-                                    'menu_class'      => 'list-menu',
-                                    'menu_id'         => '',
-                                    'echo'            => true,
-                                    'fallback_cb'     => 'wp_page_menu',
-                                    'items_wrap'      => '<ul class="list-menu_test">%3$s</ul>',
-                                    'depth'           => 0,
-                                    'walker'          => '',
-                                ] );
-                                ?>
-                            <!-- <ul class="menu__list list-menu">
-                                <li class="menu__item"><a href="" class="menu__link">
 
+                            <ul class="menu__list list-menu">
+                                <li class="menu__item"><a href="" class="menu__link">
+                                        НОВИНКИ И ХИТЫ
                                     </a></li>
                                 <li class="menu__item"><a href="" class="menu__link">АКЦИИ</a></li>
                                 <li class="menu__item"><a href="" class="menu__link">РАБОТА В AVON</a></li>
                                 <li class="menu__item"><a href="" class="menu__link">КОМАНДА УСПЕХА</a></li>
-                            </ul> -->
+                            </ul>
 
                         </div>
                     </nav>
