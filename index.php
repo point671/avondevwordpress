@@ -516,8 +516,8 @@ wp_reset_postdata(); // сброс
     <section class="representative-reviews">
         <div class="representative-reviews__container">
             <div class="representative-reviews__body body-reviews-representative">
-                <h3 class="body-reviews-representative__title title-company-advantage-body">Отзывы
-                    представителей</h3>
+                <h3 class="body-reviews-representative__title title-company-advantage-body">
+                    <?php the_field("representative-reviews-title"); ?></h3>
                 <!-- Оболочка слайдера -->
                 <div class="title-company-advantage-body__slider swiper">
                     <!-- Двигающееся часть слайдера -->
@@ -704,7 +704,7 @@ wp_reset_postdata(); // сброс
             <div class="see-new__body body-new-see">
                 <div data-tabs class="tabs body-new-see__tabs tabs-see-new-body">
                     <h3 class="tabs-see-new-body__title title-company-advantage-body">
-                        Смотри новое на сайте
+                        <?php the_field("see-new-title"); ?>
                     </h3>
 
                     <nav data-tabs-titles class="tabs__navigation tabs-see-new-body__nav nav-body-new-see-tabs">
@@ -716,59 +716,101 @@ wp_reset_postdata(); // сброс
                     <div data-tabs-body class="tabs__content tabs-see-new-body__content content-body-new-see-tabs">
                         <div class="tabs__body content-body-new-see-tabs__body">
                             <div class="content-body-new-see-tabs__wrap-flex wrap-flex-tabs-see-new-body-content">
+
+                                <?php
+                            // параметры по умолчанию
+                                $my_posts = get_posts( array(
+                                    'numberposts' => -1,
+                                    'orderby'     => 'date',
+                                    'category_name'    => 'see-new-catalog',
+                                    'order'       => 'ACS',
+                                    'post_type'   => 'post',
+                                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                                ) );
+
+                                global $post;
+
+                                foreach( $my_posts as $post ){
+                                    setup_postdata( $post );
+                                    ?>
+
                                 <a class="wrap-flex-tabs-see-new-body-content__a" href="">
                                     <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_one"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
+                                        src="<?php the_field("see-new-catalog-img"); ?>" alt="">
                                 </a>
-                                <a class="wrap-flex-tabs-see-new-body-content__a" href="">
-                                    <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_two"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
-                                </a>
-                                <a class="wrap-flex-tabs-see-new-body-content__a " href="">
-                                    <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_one"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
-                                </a>
+                                <?php 
+                                        // формат вывода the_title() ...
+                                }
+
+wp_reset_postdata(); // сброс
+?>
+
                             </div>
                         </div>
                         <div class="tabs__body content-body-new-see-tabs__body">
                             <div class="content-body-new-see-tabs__wrap-flex wrap-flex-tabs-see-new-body-content">
+                                <?php
+                            // параметры по умолчанию
+                                $my_posts = get_posts( array(
+                                    'numberposts' => -1,
+                                    'orderby'     => 'date',
+                                    'category_name'    => 'see-new-articles',
+                                    'order'       => 'ACS',
+                                    'post_type'   => 'post',
+                                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                                ) );
+
+                                global $post;
+
+                                foreach( $my_posts as $post ){
+                                    setup_postdata( $post );
+                                    ?>
+
                                 <a class="wrap-flex-tabs-see-new-body-content__a" href="">
                                     <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_one"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
+                                        src="<?php the_field("see-new-articles-img"); ?>" alt="">
                                 </a>
-                                <a class="wrap-flex-tabs-see-new-body-content__a" href="">
-                                    <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_two"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
-                                </a>
-                                <a class="wrap-flex-tabs-see-new-body-content__a " href="">
-                                    <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_one"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image2.jpg"
-                                        alt="">
-                                </a>
+                                <?php 
+                                        // формат вывода the_title() ...
+                                }
+
+wp_reset_postdata(); // сброс
+?>
+
+
+
                             </div>
                         </div>
                         <div class="tabs__body content-body-new-see-tabs__body">
                             <div class="content-body-new-see-tabs__wrap-flex wrap-flex-tabs-see-new-body-content">
+                                <?php
+                            // параметры по умолчанию
+                                $my_posts = get_posts( array(
+                                    'numberposts' => -1,
+                                    'orderby'     => 'date',
+                                    'category_name'    => 'promotion',
+                                    'order'       => 'ACS',
+                                    'post_type'   => 'post',
+                                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                                ) );
+
+                                global $post;
+
+                                foreach( $my_posts as $post ){
+                                    setup_postdata( $post );
+                                    ?>
+
                                 <a class="wrap-flex-tabs-see-new-body-content__a" href="">
                                     <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_one"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
+                                        src="<?php the_field("see-new-promotion-img"); ?>" alt="">
                                 </a>
-                                <a class="wrap-flex-tabs-see-new-body-content__a" href="">
-                                    <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_two"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
-                                </a>
-                                <a class="wrap-flex-tabs-see-new-body-content__a " href="">
-                                    <img class="wrap-flex-tabs-see-new-body-content__img wrap-flex-tabs-see-new-body-content__img_one"
-                                        src="<?php echo bloginfo('template_url'); ?>/assets/img/see-new/image1.jpg"
-                                        alt="">
-                                </a>
+                                <?php 
+                                        // формат вывода the_title() ...
+                                }
+
+wp_reset_postdata(); // сброс
+?>
+
                             </div>
                         </div>
                     </div>
@@ -813,22 +855,6 @@ foreach( $my_posts as $post ){
 
 wp_reset_postdata(); // сброс
 ?>
-
-                        <div class="spollers__item">
-                            <button type="button" data-spoller class="spollers__title">Заголовок
-                                спойлера</button>
-                            <div class="spollers__body">Контент спойлера</div>
-                        </div>
-                        <div class="spollers__item">
-                            <button type="button" data-spoller class="spollers__title">Заголовок
-                                спойлера</button>
-                            <div class="spollers__body">Контент спойлера</div>
-                        </div>
-                        <div class="spollers__item">
-                            <button type="button" data-spoller class="spollers__title">Заголовок
-                                спойлера</button>
-                            <div class="spollers__body">Контент спойлера</div>
-                        </div>
                     </div>
                 </div>
             </div>

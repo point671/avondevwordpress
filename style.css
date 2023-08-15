@@ -304,6 +304,11 @@ h6 {
   left: 5px;
 }
 
+.list-menu ul{
+
+}
+
+
 .options__text {
   color: #000;
   text-align: right;
@@ -1524,6 +1529,8 @@ h6 {
       justify-content: space-around;
 }
 
+
+
 .items-body-advantage-company-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1704,6 +1711,20 @@ h6 {
   position: relative;
 }
 
+/*Форма регистрации для выравнивания кнопки*/
+.wpcf7-form.init{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+
+/* поле город и индекс уменьшил */
+.wrap-index-city-form-registration-form-body__box input{
+  width: 300px;
+
+}
+
 .step {
   width: 70px;
   height: 70px;
@@ -1728,6 +1749,49 @@ h6 {
   font-style: normal;
   font-weight: 600;
 }
+
+
+
+
+
+
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 0px;
+}
+
+input[type="radio"]:checked {
+  background-color: #4D76E1;
+}
+
+
+.wpcf7-list-item input{
+  border-radius: 0px !important;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0px !important;
+  cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3959,6 +4023,13 @@ button.swiper-pagination-bullet {
     z-index: 55;
   }
 
+
+  .wpcf7-form.init{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
 
   .items-company-advantage-body{
     gap: 10px;
