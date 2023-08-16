@@ -146,8 +146,11 @@ function my_scripts_method(){
 		array(), 
 		_S_VERSION, 
 		array(
+			'in_footer' => true,
 			'strategy' => 'defer'
-		) 
+			
+		),
+		true
 	);
 
 	
@@ -193,7 +196,7 @@ remove_filter('the_content', 'wpautop');
 add_filter('wpcf7_form_elements', function($content) {
   $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
   $content = str_replace('<br />', '', $content);
+  // Убрать атрибуты size, rows, cols
+  $content = preg_replace('/(size|rows|cols)="\d+"/i', '', $content);
   return $content;
 });
-
-

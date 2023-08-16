@@ -3654,4 +3654,42 @@
 	spollers();
 	tabs();
 	pageNavigation();
+
+	console.log('Привет');
+	let element = document.querySelector('[name="date-245"]');
+	if (element) {
+		element.setAttribute('onfocus', "(this.type='date')");
+	}
+	document.addEventListener("DOMContentLoaded", function () {
+		const phoneInput = document.getElementById("phone");
+		const nameInput = document.getElementById("fioname");
+
+		document.querySelector(".form-registration-form-body__button-wrap").addEventListener("click", function (event) {
+			let valid = true;
+
+			if (!phoneInput.value.trim()) {
+				phoneInput.style.borderColor = "red";
+				valid = false;
+			} else {
+				phoneInput.style.borderColor = "";
+			}
+
+			if (!nameInput.value.trim()) {
+				nameInput.style.borderColor = "red";
+				valid = false;
+			} else {
+				nameInput.style.borderColor = "";
+			}
+
+			if (!valid) {
+				event.preventDefault();
+
+				// Scroll to the first invalid input element
+				const firstInvalidInput = !phoneInput.value.trim() ? phoneInput : nameInput;
+				firstInvalidInput.scrollIntoView({ behavior: "smooth", block: "center" });
+			}
+		});
+	});
+
+
 })();
