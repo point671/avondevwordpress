@@ -3660,9 +3660,15 @@
 	if (element) {
 		element.setAttribute('onfocus', "(this.type='date')");
 	}
+
+
+	//валидация формы регистрации
 	document.addEventListener("DOMContentLoaded", function () {
 		const phoneInput = document.getElementById("phone");
 		const nameInput = document.getElementById("fioname");
+		const phoneHint = document.createElement("div");
+		phoneHint.classList.add("hint");
+		phoneHint.textContent = "Введите корректный номер телефона";
 
 		document.querySelector(".form-registration-form-body__button-wrap").addEventListener("click", function (event) {
 			let valid = true;
@@ -3671,7 +3677,17 @@
 				phoneInput.style.borderColor = "red";
 				valid = false;
 			} else {
-				phoneInput.style.borderColor = "";
+				const phoneRegex = /^\+?\d{1,3}[-.\s]?\d{3}[-.\s]?\d{2,4}[-.\s]?\d{2,4}$/;
+				if (!phoneRegex.test(phoneInput.value)) {
+					phoneInput.style.borderColor = "red";
+					valid = false;
+					phoneInput.parentNode.insertBefore(phoneHint, phoneInput.nextSibling);
+				} else {
+					phoneInput.style.borderColor = "";
+					if (phoneHint.parentNode) {
+						phoneHint.parentNode.removeChild(phoneHint);
+					}
+				}
 			}
 
 			if (!nameInput.value.trim()) {
@@ -3684,12 +3700,20 @@
 			if (!valid) {
 				event.preventDefault();
 
-				// Scroll to the first invalid input element
-				const firstInvalidInput = !phoneInput.value.trim() ? phoneInput : nameInput;
+				const firstInvalidInput = !phoneInput.value.trim() || !phoneRegex.test(phoneInput.value) ? phoneInput : nameInput;
 				firstInvalidInput.scrollIntoView({ behavior: "smooth", block: "center" });
 			}
 		});
+
+		phoneInput.addEventListener("input", function () {
+			if (phoneHint.parentNode) {
+				phoneHint.parentNode.removeChild(phoneHint);
+			}
+			phoneInput.style.borderColor = "";
+		});
 	});
+
+
 
 
 })();

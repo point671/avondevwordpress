@@ -335,6 +335,12 @@ h6 {
 }
 
 
+/* для того чтобы при валидиции телефона ошибка нормально отображалась */
+.flex-tel-column{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .options__text {
   color: #000;
@@ -2463,6 +2469,7 @@ textarea {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
